@@ -17,7 +17,8 @@ class Contact extends Component {
       subject:'',
       message: '',
       sent: false,
-      error: null
+      error: null,
+      res:'test'
     }
   }
 
@@ -33,12 +34,13 @@ class Contact extends Component {
       }
       
       axios.post('/api/send',data)
-      .then((response)=>{
-        this.setState({sent:true},this.resetForm())
+            .then((response)=>{
+        this.setState({res:response.data});
+        this.setState({sent:true},this.resetForm());
            }).catch(()=>{
-                         console.log("Message failed to send.")
-        
+                         console.log("Message failed to send.")      
       })
+      
     }
 
     resetForm(){
@@ -90,7 +92,7 @@ class Contact extends Component {
     value={this.state.message}
   ></textarea>
   <div className={this.state.sent?'msg msgAppear':'msg'}>
-    Message has been sent..
+    Message has been sent. {this.state.res}
   </div>
   <br></br>
   <button className="button1" type="submit" value="Submit">SEND</button>
