@@ -29,7 +29,7 @@ let smtpTransport = nodemailer.createTransport({
   port: 465,
   auth: {
       user: 'usivkum@gmail.com', // generated ethereal user
-      pass: 'Sivakuma0210'  // generated ethereal password
+      pass: '**********'  // generated ethereal password
   }
   
 });
