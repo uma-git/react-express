@@ -28,8 +28,8 @@ let smtpTransport = nodemailer.createTransport({
   service: 'Gmail',
   port: 465,
   auth: {
-      user: 'usivkum@gmail.com', // generated ethereal user
-      pass: '**********'  // generated ethereal password
+      user: 'usivkum@gmail.com', 
+      pass: '**********'  
   }
   
 });
@@ -38,7 +38,7 @@ let smtpTransport = nodemailer.createTransport({
 // setup email data with unicode symbols
 let mailOptions = {
   from: data.email, // sender address
-  to: 'msivkum@gmail.com', // list of receivers
+  to: 'usivkum@gmail.com', 
   subject: data.subject, // Subject line
   html:` 
   <p>You have a new message </p>
